@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A Special Surprise ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#312e81,#7c3aed);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.star{
+    position:absolute;
+    color:white;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:0.2;}
+    50%{opacity:1;}
+}
+
+.container{
+    text-align:center;
+    z-index:2;
+}
+
+.title{
+    color:white;
+    font-size:40px;
+    margin-bottom:30px;
+    text-shadow:0 0 20px white;
+}
+
+.subtitle{
+    color:#f8fafc;
+    margin-bottom:40px;
+}
+
+.gift{
+    position:relative;
+    width:180px;
+    height:180px;
+    margin:auto;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.gift:hover{
+    transform:scale(1.08);
+}
+
+.box{
+    width:180px;
+    height:120px;
+    background:#ff4d6d;
+    position:absolute;
+    bottom:0;
+    border-radius:12px;
+    box-shadow:0 0 40px rgba(255,77,109,.8);
+}
+
+.lid{
+    width:180px;
+    height:45px;
+    background:#ff758f;
+    position:absolute;
+    top:20px;
+    border-radius:12px;
+    transition:1s;
+}
+
+.ribbon-v{
+    position:absolute;
+    width:20px;
+    height:180px;
+    background:white;
+    left:80px;
+}
+
+.ribbon-h{
+    position:absolute;
+    width:180px;
+    height:20px;
+    background:white;
+    top:60px;
+}
+
+.open .lid{
+    transform:translateY(-80px) rotate(-15deg);
+}
+
+.secret{
+    display:none;
+    margin-top:40px;
+    background:white;
+    width:400px;
+    max-width:90vw;
+    padding:25px;
+    border-radius:20px;
+    animation:fadeIn 1s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.secret h2{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+.secret p{
+    color:#444;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    border-radius:25px;
+    border:1px solid #ccc;
+    text-align:center;
+    font-size:16px;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d6d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.heart{
+    position:absolute;
+    font-size:25px;
+    animation:floatUp 4s linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        opacity:1;
+        transform:translateY(0);
+    }
+    to{
+        opacity:0;
+        transform:translateY(-300px);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="star" style="top:10%;left:15%">✨</div>
+<div class="star" style="top:20%;left:75%">✨</div>
+<div class="star" style="top:70%;left:20%">✨</div>
+<div class="star" style="top:80%;left:80%">✨</div>
+<div class="star" style="top:35%;left:60%">✨</div>
+<div class="star" style="top:55%;left:40%">✨</div>
+
+<div class="container">
+
+<h1 class="title">✨ A Gift For Someone Special ✨</h1>
+
+<p class="subtitle">
+Click the gift to reveal your surprise
+</p>
+
+<div class="gift" id="gift" onclick="openGift()">
+
+<div class="lid"></div>
+
+<div class="box"></div>
+
+<div class="ribbon-v"></div>
+
+<div class="ribbon-h"></div>
+
+</div>
+
+<div class="secret" id="secret">
+
+<h2>💌 Secret Birthday Message</h2>
+
+<p>
+This little gift was made especially for you.
+Before you continue, enter the secret password.
+</p>
+
+<input type="password"
+id="password"
+placeholder="Enter Secret Password">
+
+<br>
+
+<button onclick="checkPassword()">
+Unlock Surprise ❤️
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openGift(){
+
+    document.getElementById("gift")
+    .classList.add("open");
+
+    document.getElementById("secret")
+    .style.display="block";
+
+    for(let i=0;i<20;i++){
+
+        let heart=document.createElement("div");
+
+        heart.innerHTML="❤️";
+
+        heart.className="heart";
+
+        heart.style.left=
+        (window.innerWidth/2 +
+        Math.random()*200-100)+"px";
+
+        heart.style.top=
+        (window.innerHeight/2)+"px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },4000);
+    }
+}
+
+function checkPassword(){
+
+    let pass=
+    document.getElementById("password").value;
+
+    if(pass==="20061311"){
+        window.location.href="index.html";
+    }
+    else{
+        alert("Wrong password ❤️");
+    }
+}
+
+</script>
+
+</body>
+</html>

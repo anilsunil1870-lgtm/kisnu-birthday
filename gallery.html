@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaroid Memories ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f7f1e8;
+    background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,215,0,.15), transparent 250px),
+    radial-gradient(circle at 80% 40%, rgba(255,192,203,.15), transparent 250px);
+    font-family:Arial,sans-serif;
+    padding:50px 20px;
+}
+
+h1{
+    text-align:center;
+    color:#444;
+    font-size:3rem;
+    margin-bottom:80px;
+}
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:100px;
+}
+
+.polaroid{
+    width:420px;
+    background:white;
+    padding:15px;
+    padding-bottom:170px;
+    position:relative;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    transition:0.4s;
+}
+
+.polaroid:hover{
+    transform:scale(1.05) !important;
+}
+
+.polaroid::before{
+    content:"📌";
+    position:absolute;
+    top:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:30px;
+}
+
+.polaroid:nth-child(1){transform:rotate(-4deg);}
+.polaroid:nth-child(2){transform:rotate(3deg);}
+.polaroid:nth-child(3){transform:rotate(-2deg);}
+.polaroid:nth-child(4){transform:rotate(5deg);}
+.polaroid:nth-child(5){transform:rotate(-5deg);}
+.polaroid:nth-child(6){transform:rotate(2deg);}
+.polaroid:nth-child(7){transform:rotate(-3deg);}
+.polaroid:nth-child(8){transform:rotate(4deg);}
+.polaroid:nth-child(9){transform:rotate(-2deg);}
+
+.polaroid img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    display:block;
+}
+
+.caption{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    text-align:center;
+    color:#555;
+    font-size:24px;
+    line-height:1.4;
+    font-family:"Brush Script MT",cursive;
+}
+
+.heart{
+    display:block;
+    margin-top:8px;
+    font-size:24px;
+}
+
+.final{
+    text-align:center;
+    margin-top:100px;
+    margin-bottom:80px;
+    color:#ff4d6d;
+    font-size:36px;
+    line-height:1.7;
+}
+
+</style>
+</head>
+<body>
+
+<h1>✨ A Collection of Beautiful Memories ✨</h1>
+
+<div class="gallery">
+
+<div class="polaroid">
+<img src="photos/photo1.jpg">
+<div class="caption">
+this is my kutti ok
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo2.jpg">
+<div class="caption">
+nmmk kore photo idknm
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo3.jpg">
+<div class="caption">
+bababooooo
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo4.jpg">
+<div class="caption">
+soooo hotttt
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo5.jpg">
+<div class="caption">
+this make me cntrl ilathavan
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo6.jpg">
+<div class="caption">
+cuteeeee
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo7.jpg">
+<div class="caption">
+sundari kutti
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo8.jpg">
+<div class="caption">
+unka smile romba cute aayirk
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<div class="polaroid">
+<img src="photos/photo9.jpg">
+<div class="caption">
+ikingne ennum kedknm
+<span class="heart">❤️</span>
+</div>
+</div>
+
+</div>
+
+<div class="final">
+🎂 Happy Birthday ❤️
+<br><br>
+Thank you for being part of so many beautiful memories.
+
+<br><br>
+
+<a href="memories.html" class="next-btn">
+Continue The Journey ❤️
+</a>
+
+</div>
+
+</body>
+</html>
